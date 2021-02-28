@@ -5,7 +5,7 @@
 #docker container stop pyprofgen-app
 
 
-FROM python:3
+FROM python:3.9-alpine
 
 ADD . /
 ADD main.py /
