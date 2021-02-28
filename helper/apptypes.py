@@ -59,6 +59,8 @@ class RTapp:
                 print("MQTT: Error publishing topic <{0}>: {2}".format(topic, e))
 
     def pubSubConnect(self, brokerIP, brokerPort, brokerKeepalive):
+        print("MQTT: connecting to broker with IP address <{0}> via port {1}".format(brokerIP, brokerPort))
+
         #connect to MQTT broker
         self.brokerIP = brokerIP
         self.brokerPort = brokerPort

@@ -6,7 +6,7 @@ from helper.apptypes import RTapp
 from helper.profgen import profileGenerator
 import helper.profgen
 
-MQTT_BROKER_IP = "localhost"
+MQTT_BROKER_IP = "127.0.0.1"
 MQTT_BROKER_PORT = 1883
 MQTT_BROKER_KEEPALIVE = 60
 
