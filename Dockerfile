@@ -1,7 +1,7 @@
 #https://docs.docker.com/engine/reference/builder/
 #docker build -t pyprofgen-img .
 #docker run -d --rm --network host --name pyprofgen-container pyprofgen-img
-#docker run -d --rm -p 1883:1883 --network host --name pyprofgen-container pyprofgen-img
+#docker run -d --rm -P --name pyprofgen-container pyprofgen-img
 #docker logs pyprofgen-container
 #docker container stop pyprofgen-container
 
