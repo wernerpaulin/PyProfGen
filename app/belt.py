@@ -6,16 +6,33 @@ from helper.apptypes import RTapp
 from helper.profgen import profileGenerator
 import helper.profgen
 
-MQTT_BROKER_IP = "127.0.0.1"
-MQTT_BROKER_PORT = 1883
+import os
+
+#check for environmental variables in case this app is started in a docker container
+#MQTT Broker IP
+if (os.environ.get('MQTT_BROKER_IP') != None):
+    print("Environmental variable provided for MQTT_BROKER_IP: {0}".format(os.environ.get('MQTT_BROKER_IP')))
+    MQTT_BROKER_IP = os.environ.get('MQTT_BROKER_IP')
+else:
+    MQTT_BROKER_IP = "localhost"
+    print("No environmental variable provided for MQTT_BROKER_IP - using default: {0}".format(MQTT_BROKER_IP))
+
+#MQTT Broker port
+if (os.environ.get('MQTT_BROKER_PORT') != None):
+    print("Environmental variable provided for MQTT_BROKER_PORT: {0}".format(os.environ.get('MQTT_BROKER_PORT')))
+    MQTT_BROKER_PORT = int(os.environ.get('MQTT_BROKER_PORT'))
+else:
+    MQTT_BROKER_PORT = 1883
+    print("No environmental variable provided for MQTT_BROKER_IP - using default: {0}".format(MQTT_BROKER_IP))
+
 MQTT_BROKER_KEEPALIVE = 60
 
 #MQTT: the topic is formed of the app name: e.g. \Belt\command + JSON-string with all variable/values pairs
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name
-TOPIC_COMMAND = "/command"
-TOPIC_PARAMETER = "/parameter"
-TOPIC_MONITOR = "/monitor"
-TOPIC_PARAMETER_ON_CONNECT= "/parameteronconnect"
+TOPIC_COMMAND = "mosaiq.com.lenze.PyProfGen/command"
+TOPIC_PARAMETER = "mosaiq.com.lenze.PyProfGen/parameter"
+TOPIC_MONITOR = "mosaiq.com.lenze.PyProfGen/monitor"
+TOPIC_PARAMETER_ON_CONNECT= "mosaiq.com.lenze.PyProfGen/parameteronconnect"
 
 COMMAND_ID_MOVE_VELOCITY = "MC_MoveVelocity"
 COMMAND_ID_MOVE_RELATIVE = "MC_MoveRelative"
@@ -45,14 +62,14 @@ class belt(RTapp):
         self.publicMonitorData = appPublicMonitorData() #all monitor data will be serialized and cyclically published
         
         #activate MQTT for this app (on connect publication need to be prepared __before__ so it can be sent out immediately on connect
-        super().addOnConnectPublication("/" + self.appName + TOPIC_PARAMETER_ON_CONNECT, self.parameter)
+        super().addOnConnectPublication(TOPIC_PARAMETER_ON_CONNECT, self.parameter)
         super().pubSubConnect(MQTT_BROKER_IP, MQTT_BROKER_PORT, MQTT_BROKER_KEEPALIVE)
         
         #register data for publishing
-        super().addCyclicPublication("/" + self.appName + TOPIC_MONITOR, self.publicMonitorData)
+        super().addCyclicPublication(TOPIC_MONITOR, self.publicMonitorData)
         #received data of subscribed topic will be automatically mapped to the given data object: json-key = attribute name in instance, json-value = attribute value
-        super().addSubscription("/" + self.appName + TOPIC_COMMAND, self.commandInterface)
-        super().addSubscription("/" + self.appName + TOPIC_PARAMETER, self.parameter)
+        super().addSubscription(TOPIC_COMMAND, self.commandInterface)
+        super().addSubscription( TOPIC_PARAMETER, self.parameter)
 
         self.profGenMovement = profileGenerator()
         
