@@ -3,6 +3,7 @@
 #docker run -d --rm --network host -e MQTT_BROKER_IP=192.168.1.100 -e MQTT_BROKER_PORT=1883 --name pyprofgen-app pyprofgen-img
 #docker logs pyprofgen-app
 #docker container stop pyprofgen-app
+#docker save pyprofgen-img > pyprofgen-img.tar
 
 
 FROM python:3.9-alpine
