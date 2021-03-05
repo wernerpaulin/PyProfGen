@@ -29,10 +29,10 @@ MQTT_BROKER_KEEPALIVE = 60
 
 #MQTT: the topic is formed of the app name: e.g. \Belt\command + JSON-string with all variable/values pairs
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name
-TOPIC_COMMAND = "mosaiq.com.lenze.PyProfGen/command"
-TOPIC_PARAMETER = "mosaiq.com.lenze.PyProfGen/parameter"
-TOPIC_MONITOR = "mosaiq.com.lenze.PyProfGen/monitor"
-TOPIC_PARAMETER_ON_CONNECT= "mosaiq.com.lenze.PyProfGen/parameteronconnect"
+TOPIC_COMMAND = "mosaiq.lenze.PyProfGen/command"
+TOPIC_PARAMETER = "mosaiq.lenze.PyProfGen/parameter"
+TOPIC_MONITOR = "mosaiq.lenze.PyProfGen/monitor"
+TOPIC_PARAMETER_ON_CONNECT= "mosaiq.lenze.PyProfGen/parameteronconnect"
 
 COMMAND_ID_MOVE_VELOCITY = "MC_MoveVelocity"
 COMMAND_ID_MOVE_RELATIVE = "MC_MoveRelative"
@@ -114,6 +114,7 @@ class belt(RTapp):
         #update public data which will be then sent via MQTT to subscribers
         self.publicMonitorData.actPosition = self.profGenMovement.sProf
         self.publicMonitorData.actVelocity = self.profGenMovement.vProf
+        self.publicMonitorData.actRotarySpeed = self.publicMonitorData.actVelocity * self.parameter.maxMotorRotarySpeed / self.parameter.maxVelocity
 
 
 class appCommandInterface():
@@ -124,13 +125,15 @@ class appParameter():
     def __init__(self):
         self.setDistance = 0
         self.setVelocity = 300
-        self.setAcceleration = 100
+        self.setAcceleration = 200
         self.maxPosition =1000000000
         self.minPosition = -self.maxPosition
         self.maxVelocity = 500
         self.maxAccleration = 1000.0
+        self.maxMotorRotarySpeed = 2000.0
         
 class appPublicMonitorData():
     def __init__(self):
         self.actVelocity = 0
         self.actPosition = 0
+        self.actRotarySpeed = 0

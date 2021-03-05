@@ -14,10 +14,6 @@ ADD main.py /
 RUN pip3 install asyncio
 RUN pip3 install paho-mqtt
 
-#EXPOSE 80
-EXPOSE 1883
-#EXPOSE 9001
-
 
 #start python with unbuffered output option to see print outputs in docker log
 CMD [ "python", "-u", "main.py" ]
