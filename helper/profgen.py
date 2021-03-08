@@ -28,7 +28,7 @@ class profileGenerator:
         self.vProf = 0
 
         #status
-        self.inPos = False      #triggers profile generation in update function
+        self.inPos = True      #assume that profile generator is in position at power-up
         self.initDone = False
         self.cmdStop = False
         self.vMaxReached = False

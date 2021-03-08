@@ -36,7 +36,9 @@ TOPIC_PARAMETER_ON_CONNECT= "mosaiq.lenze.PyProfGen/parameteronconnect"
 
 COMMAND_ID_MOVE_VELOCITY = "MC_MoveVelocity"
 COMMAND_ID_MOVE_RELATIVE = "MC_MoveRelative"
+COMMAND_ID_MOVE_ABSOLUTE = "MC_MoveAbsolute"
 COMMAND_ID_MOVE_STOP = "MC_MoveStop"
+COMMAND_ID_AUTOMATIC_MODE = "MC_LE_AutomaticMode"
 COMMAND_ID_NO_COMMAND = ""
 
 
@@ -72,17 +74,19 @@ class belt(RTapp):
         super().addSubscription( TOPIC_PARAMETER, self.parameter)
 
         self.profGenMovement = profileGenerator()
+        self.automaticCycleStopTimer = 0
         
 
     def cyclic(self):
         super().cyclic()     #execute also code of cyclic method from parent class RTapp
 
+
         #command interface
         if (self.commandInterface.command == COMMAND_ID_MOVE_STOP):
             self.commandInterface.command = COMMAND_ID_NO_COMMAND
             self.profGenMovement.cmdStop = True
-        
-        elif (self.commandInterface.command == COMMAND_ID_MOVE_RELATIVE):
+
+        elif (self.commandInterface.command == COMMAND_ID_MOVE_ABSOLUTE):
             self.commandInterface.command = COMMAND_ID_NO_COMMAND
             #initialize(aMax, vMax, sMin, sMax, vAct, vSet, sAct, sSet, moveType)
             self.profGenMovement.initialize(self.parameter.setAcceleration, 
@@ -93,6 +97,19 @@ class belt(RTapp):
                                             self.parameter.setVelocity, 
                                             self.publicMonitorData.actPosition,
                                             self.parameter.setDistance,
+                                            helper.profgen.MOVE_TYPE_POSITION)
+
+        elif (self.commandInterface.command == COMMAND_ID_MOVE_RELATIVE):
+            self.commandInterface.command = COMMAND_ID_NO_COMMAND
+            #initialize(aMax, vMax, sMin, sMax, vAct, vSet, sAct, sSet, moveType)
+            self.profGenMovement.initialize(self.parameter.setAcceleration, 
+                                            self.parameter.maxVelocity, 
+                                            self.parameter.minPosition, 
+                                            self.parameter.maxPosition, 
+                                            self.publicMonitorData.actVelocity, 
+                                            self.parameter.setVelocity, 
+                                            self.publicMonitorData.actPosition,
+                                            self.parameter.setDistance + self.publicMonitorData.actPosition,
                                             helper.profgen.MOVE_TYPE_POSITION)
 
         elif (self.commandInterface.command == COMMAND_ID_MOVE_VELOCITY):
@@ -107,6 +124,27 @@ class belt(RTapp):
                                             self.publicMonitorData.actPosition,
                                             self.parameter.setDistance,
                                             helper.profgen.MOVE_TYPE_VELOCITY)
+
+        elif (self.commandInterface.command == COMMAND_ID_AUTOMATIC_MODE):
+            #in automatic mode the profile generator moves a certain distance, stops and moves again
+            if (self.profGenMovement.inPos == True):
+                if (self.automaticCycleStopTimer >= self.parameter.automaticCycleStopTime):
+                    #initialize(aMax, vMax, sMin, sMax, vAct, vSet, sAct, sSet, moveType)
+                    self.profGenMovement.initialize(self.parameter.setAcceleration, 
+                                                    self.parameter.maxVelocity, 
+                                                    self.parameter.minPosition, 
+                                                    self.parameter.maxPosition, 
+                                                    self.publicMonitorData.actVelocity, 
+                                                    self.parameter.setVelocity, 
+                                                    self.publicMonitorData.actPosition,
+                                                    self.parameter.setDistance + self.publicMonitorData.actPosition,
+                                                    helper.profgen.MOVE_TYPE_POSITION)
+                else:
+                    self.automaticCycleStopTimer = self.automaticCycleStopTimer + self.cycleTime
+
+            else:
+                self.automaticCycleStopTimer = 0
+            
 
         #execute profile generator
         self.profGenMovement.update()
@@ -123,7 +161,7 @@ class appCommandInterface():
         
 class appParameter():
     def __init__(self):
-        self.setDistance = 0
+        self.setDistance = 200
         self.setVelocity = 300
         self.setAcceleration = 200
         self.maxPosition =1000000000
@@ -131,6 +169,7 @@ class appParameter():
         self.maxVelocity = 500
         self.maxAccleration = 1000.0
         self.maxMotorRotarySpeed = 2000.0
+        self.automaticCycleStopTime = 1.0 
         
 class appPublicMonitorData():
     def __init__(self):
