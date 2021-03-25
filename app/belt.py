@@ -29,8 +29,8 @@ MQTT_BROKER_KEEPALIVE = 60
 
 #MQTT: the topic is formed of the app name: e.g. \Belt\command + JSON-string with all variable/values pairs
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name
-TOPIC_COMMAND = "mosaiq.lenze.PyProfGen/command"
-TOPIC_PARAMETER = "mosaiq.lenze.PyProfGen/parameter"
+TOPIC_COMMAND = "mosaiq.lenze.pyprofgen/command"
+TOPIC_PARAMETER = "mosaiq.lenze.pyprofgen/parameter"
 TOPIC_MONITOR = "mosaiq.lenze.PyProfGen/monitor"
 TOPIC_PARAMETER_ON_CONNECT= "mosaiq.lenze.PyProfGen/parameteronconnect"
 
