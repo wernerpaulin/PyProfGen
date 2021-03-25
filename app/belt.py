@@ -14,7 +14,7 @@ if (os.environ.get('MQTT_BROKER_IP') != None):
     print("Environmental variable provided for MQTT_BROKER_IP: {0}".format(os.environ.get('MQTT_BROKER_IP')))
     MQTT_BROKER_IP = os.environ.get('MQTT_BROKER_IP')
 else:
-    MQTT_BROKER_IP = "localhost"
+    MQTT_BROKER_IP = "mosaiq.eclipsemosquitto"
     print("No environmental variable provided for MQTT_BROKER_IP - using default: {0}".format(MQTT_BROKER_IP))
 
 #MQTT Broker port
@@ -31,8 +31,8 @@ MQTT_BROKER_KEEPALIVE = 60
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name
 TOPIC_COMMAND = "mosaiq.lenze.pyprofgen/command"
 TOPIC_PARAMETER = "mosaiq.lenze.pyprofgen/parameter"
-TOPIC_MONITOR = "mosaiq.lenze.PyProfGen/monitor"
-TOPIC_PARAMETER_ON_CONNECT= "mosaiq.lenze.PyProfGen/parameteronconnect"
+TOPIC_MONITOR = "mosaiq.lenze.pyprofgen/monitor"
+TOPIC_PARAMETER_ON_CONNECT= "mosaiq.lenze.pyprofgen/parameteronconnect"
 
 COMMAND_ID_MOVE_VELOCITY = "MC_MoveVelocity"
 COMMAND_ID_MOVE_RELATIVE = "MC_MoveRelative"
