@@ -1,12 +1,13 @@
 #https://docs.docker.com/engine/reference/builder/
-#docker build -t pyprofgen-img .
+#docker build --rm -t pyprofgen:1.0.0 .
+#docker save -o pyprofgen-1-0-0.tar pyprofgen:1.0.0
 #docker run -d --rm --network host -e MQTT_BROKER_IP=192.168.1.100 -e MQTT_BROKER_PORT=1883 --name pyprofgen-app pyprofgen-img
 #docker logs pyprofgen-app
 #docker container stop pyprofgen-app
-#docker save pyprofgen-img -o pyprofgen-img.tar
 
 
-FROM python:3.9-alpine 
+
+FROM python:3-alpine
 
 ADD . /
 ADD main.py /
