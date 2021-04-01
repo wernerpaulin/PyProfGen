@@ -14,7 +14,7 @@ if (os.environ.get('MQTT_BROKER_IP') != None):
     print("Environmental variable provided for MQTT_BROKER_IP: {0}".format(os.environ.get('MQTT_BROKER_IP')))
     MQTT_BROKER_IP = os.environ.get('MQTT_BROKER_IP')
 else:
-    MQTT_BROKER_IP = "mosaiq.eclipsemosquitto"
+    MQTT_BROKER_IP = "mosaiq-eclipsemosquitto"
     print("No environmental variable provided for MQTT_BROKER_IP - using default: {0}".format(MQTT_BROKER_IP))
 
 #MQTT Broker port
