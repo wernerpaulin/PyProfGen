@@ -70,12 +70,14 @@ class RTapp:
         self.mqttClient.on_connect = PubSub_onConnect
         self.mqttClient.on_message = PubSub_onMessage
 
+        #connect to broker without exception in case the broker is not yet available or the network is not yet up
         self.mqttSaveConnect()
+        #once the connected start the receive and send loop 
+        self.mqttClient.loop_start()    #non-blocking call with automatic reconnects
 
     def mqttSaveConnect(self):
         try:
             self.mqttClient.connect(self.brokerIP, self.brokerPort, self.brokerKeepalive)
-            self.mqttClient.loop_start()
         except Exception as e:
             print("MQTT: Fundamental error connecting: {0}".format(e))
             print("MQTT: Trying to connect...")
