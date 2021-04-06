@@ -5,28 +5,14 @@ import asyncio
 from helper.apptypes import RTapp
 from helper.profgen import profileGenerator
 import helper.profgen
+from helper.env_support import initializeENV
 
 import os
 
 #check for environmental variables in case this app is started in a docker container
-#MQTT Broker IP
-if (os.environ.get('MQTT_BROKER_IP') != None):
-    print("Environmental variable provided for MQTT_BROKER_IP: {0}".format(os.environ.get('MQTT_BROKER_IP')))
-    MQTT_BROKER_IP = os.environ.get('MQTT_BROKER_IP')
-else:
-    #MQTT_BROKER_IP = "mosaiq-eclipsemosquitto"
-    MQTT_BROKER_IP = "localhost"
-    print("No environmental variable provided for MQTT_BROKER_IP - using default: {0}".format(MQTT_BROKER_IP))
-
-#MQTT Broker port
-if (os.environ.get('MQTT_BROKER_PORT') != None):
-    print("Environmental variable provided for MQTT_BROKER_PORT: {0}".format(os.environ.get('MQTT_BROKER_PORT')))
-    MQTT_BROKER_PORT = int(os.environ.get('MQTT_BROKER_PORT'))
-else:
-    MQTT_BROKER_PORT = 1883
-    print("No environmental variable provided for MQTT_BROKER_IP - using default: {0}".format(MQTT_BROKER_IP))
-
-MQTT_BROKER_KEEPALIVE = 60
+MQTT_BROKER_IP = initializeENV("MQTT_BROKER_IP", "localhost")
+MQTT_BROKER_PORT = initializeENV("MQTT_BROKER_PORT", 1883)
+MQTT_BROKER_KEEPALIVE = initializeENV("MQTT_BROKER_KEEPALIVE", 60)
 
 #MQTT: the topic is formed of the app name: e.g. \Belt\command + JSON-string with all variable/values pairs
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name

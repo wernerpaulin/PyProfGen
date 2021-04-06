@@ -5,6 +5,7 @@ import asyncio
 import json
 from collections import namedtuple
 import paho.mqtt.client as mqtt 
+import time
 #sudo pip3 install paho-mqtt
 #sudo apt-get install -y mosquitto mosquitto-clients
 #sudo systemctl enable mosquitto.service
@@ -66,17 +67,25 @@ class RTapp:
         self.brokerPort = brokerPort
         self.brokerKeepalive = brokerKeepalive
         self.mqttClient = mqtt.Client(userdata=self)
-        self.mqttClient.connect(self.brokerIP, self.brokerPort, self.brokerKeepalive)
-
         self.mqttClient.on_connect = PubSub_onConnect
         self.mqttClient.on_message = PubSub_onMessage
-        
-        self.mqttClient.loop_start()
-    
+
+        self.mqttSaveConnect()
+
+    def mqttSaveConnect(self):
+        try:
+            self.mqttClient.connect(self.brokerIP, self.brokerPort, self.brokerKeepalive)
+            self.mqttClient.loop_start()
+        except Exception as e:
+            print("MQTT: Fundamental error connecting: {0}".format(e))
+            print("MQTT: Trying to connect...")
+            time.sleep(1)
+            self.mqttSaveConnect()
+
+
     def addSubscription(self, topic, destinationDataObj):
         #MQTT
         self.subscriptionList[topic] = destinationDataObj   #register topic and the destination data object to which all receive data will be mapped
-        self.mqttClient.subscribe(topic)                    #register topic at broker
         
     def addCyclicPublication(self, topic, sourceDataObj):
         #MQTT
@@ -103,11 +112,13 @@ class RTapp:
             print("MQTT: Error decoding received MQTT payload of RT app <{0}>, error: {1}".format(self.appName, e))
 
     
-    #usually overloaded by child instance. Defined here to avoid that code breaks during MQTT callback
+    #when the client connects to the broker (again), send all parameters out to initialize the UI and also subscribe to topics
     def onMqttBrokerConnected(self):
         print("MQTT: RT App <{0}> connected to broker at: <{1}>".format(self.appName, self.brokerIP))    #this print() is necessary so that the following code is executed - no idea why?
+
+        #send parameters for subscribes to initalize their default data e.g. in UI
         try:
-            #walk through all topics registered for cyclic publishing
+            print("MQTT: publishing all parameters of RT App <{0}> for subscribes to initalize their default data e.g. in UI".format(self.appName))    
             for topic in self.publicationListOnConnect:
                 try:
                     sourceDataObj = self.publicationListOnConnect[topic]
@@ -118,5 +129,13 @@ class RTapp:
         except Exception as e:
             print("MQTT: Error publishing topic: <{0}>".format(e))
 
-
-#python3 /home/pi/mosaiq4tw/main.py
+        #subscribe to all topics the app wants to consume
+        try:
+            print("MQTT: subsribing to all topics the RT App <{0}> wants to consume".format(self.appName))    
+            for topic in self.subscriptionList:
+                try:
+                    self.mqttClient.subscribe(topic)
+                except Exception as e:
+                    print("MQTT: Error subscribing to topic <{0}>: {1}".format(topic, e))
+        except Exception as e:
+            print("MQTT: Error subscribing to topic: <{0}>".format(e))
