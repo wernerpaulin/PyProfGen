@@ -33,6 +33,9 @@
     <li>
       <a href="#about-the-app">About The App</a>
       <ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#operating-modes">Operating Modes</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -61,38 +64,37 @@
 
 <!-- ABOUT THE APP -->
 ## About The App
-**Features**:
+### Gallery
+<br />
+<img src="images/gallery1.png" 
+     alt="Gallery 1" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
+<img src="images/gallery2.png" 
+     alt="Gallery 2" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
+<img src="images/gallery3.png" 
+     alt="Gallery 3" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
+<img src="images/gallery4.png" 
+     alt="Gallery 4" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
+
+### Features
 * 100ms update interval 
 * velocity and rotary speed profile
 * position profile
 * dynamic deceleration ramp calculation in position control mode
 
-**Operating modes**:
+### Operating Modes
 * Velocity control
 * Absolute position control
 * Relative position control
 * Automatic mode: cases the profile generator to initiate relative movements 
 * Stop movement
-
-**Gallery**
-<br />
-<img src="images/gallery1.png" 
-     alt="Gallery 1" 
-     style="float:left; vertical-align:top; margin-right: 10px;" 
-     width="200"/>
-<img src="images/gallery2.png" 
-     alt="Gallery 2" 
-     style="float:left; vertical-align:top; margin-right: 10px;" 
-     width="200"/>
-<img src="images/gallery3.png" 
-     alt="Gallery 3" 
-     style="float:left; vertical-align:top; margin-right: 10px;" 
-     width="200"/>
-<img src="images/gallery4.png" 
-     alt="Gallery 4" 
-     style="float:left; vertical-align:top; margin-right: 10px;" 
-     width="200"/>
-
 
 ### Built With
 * [Python®](https://www.python.org/)
@@ -107,7 +109,7 @@ Find this app in the App Store and use it in a machine.
 
 ### Prerequisites
 
-This app requires are MQTT broker which can either run as an app or in the same network of the Runtime.
+This app requires a MQTT broker which can either run as an app or on a different hose but in the same network of the Runtime.
 
 ### Usage
 1. This app is per default connecting to the local Eclipse Mosquitto MQTT broker (available as app). If you choose to use another broker set or change the <a href="#environmental-variables">environmental variable "MQTT_BROKER_IP"</a>.
@@ -137,14 +139,6 @@ The app publishes the following MQTT topics:
 <!-- DATA MANAGEMENT -->
 ## Data Management
 
-### Volumes
-Mount points are access points (like paths) to volumes provided to the app to read and write data:
-
-| Mount Point | Default Data | Changeable by User | Description | 
-| -------- | ------------- | ------------------ | ----------- |
-| n.a. | | |
-
-
 ### Environmental Variables
 Environmental variables are used to initialize or define a certain functionality of an app:
 : IP address of broker. If not defined: "mosaiq.eclipsemosquitto"
@@ -156,13 +150,19 @@ MQTT_BROKER_PORT: Port of broker. If not defined: 1883
 | MQTT_BROKER_PORT | 1883 | yes | Port used by the MQTT broker |
 | MQTT_BROKER_KEEPALIVE | 60 | yes | Maximum time that this app does not communicate with the broker |
 
+### Volumes
+Mount points are access points (like paths) to volumes provided to the app to read and write data:
+
+| Mount Point | Default Data | Changeable by User | Description | 
+| -------- | ------------- | ------------------ | ----------- |
+| n.a. | | |
 
 
 <!-- INFORMATION -->
 ## Information
 | Developer | Compatibility | Copyright | License |
 | ----------| ------------- |---------- | ------- |
-| [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | © 2021- [Lenze SE] | MIT License. See `LICENSE` for more information. |
+| [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | © 2021- [Lenze SE](https://www.lenze.com/) | MIT License. See `LICENSE` for more information. |
 
 
 ## Legal Statements
