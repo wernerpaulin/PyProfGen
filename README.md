@@ -21,7 +21,7 @@
   <h3 align="center">PyProfGen</h3>
 
   <p align="center">
-    This profile generator is written in Python® 3 using asyncio for concurrent of coroutines and paho-mqtt for communication.
+    This profile generator is written in Python® 3 generates a velocity and position profile depending on set parameters like target position, speed and acceleration.
   </p>
 </p>
 
@@ -96,9 +96,11 @@
 * Stop movement
 
 ### Built With
-* [Python®](https://www.python.org/)
-* [Eclipse Paho®](https://www.eclipse.org/paho/)
-* [Docker®](https://www.docker.com/)
+| Technology | Description |
+| -------------- | ----------- |
+| [Python®](https://www.python.org/) | asyncio for concurrent execution of coroutines |
+| [Eclipse Paho®](https://www.eclipse.org/paho/) | MQTT client |
+| [Docker®](https://www.docker.com/) | Container technology |
 
 
 <!-- GETTING STARTED -->
