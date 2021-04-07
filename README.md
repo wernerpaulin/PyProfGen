@@ -15,17 +15,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/wernerpaulin/PyProfGen">
-    <img src="images/icon.png" alt="Logo" width="80" height="80">
+    <img src="images/icon.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">PyProfGen</h3>
 
   <p align="center">
     This profile generator is written in Python 3 using asyncio for concurrent of coroutines and paho-mqtt for communication.
-    <br />
-    <a href="https://github.com/wernerpaulin/PyProfGen/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/wernerpaulin/PyProfGen/issues">Request Feature</a>
   </p>
 </p>
 
@@ -65,11 +61,22 @@
 
 <!-- ABOUT THE APP -->
 ## About The App
-[![Product Name Screen Shot][product-screenshot1]][![Product Name Screen Shot][product-screenshot2]]
-![Picture 1](images/gallery1.png "Picture Title")
-![Picture 1](images/gallery2.png "Picture Title")
-![Picture 1](images/gallery3.png "Picture Title")
-![Picture 1](images/gallery4.png "Picture Title")
+<img src="images/gallery1.png" 
+     alt="Gallery 1" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
+<img src="images/gallery2.png" 
+     alt="Gallery 2" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
+<img src="images/gallery3.png" 
+     alt="Gallery 3" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
+<img src="images/gallery4.png" 
+     alt="Gallery 4" 
+     style="float:left; margin-right: 10px;" 
+     width="200"/>
 
 **Features**:
 * 100ms update interval 
@@ -111,21 +118,32 @@ This app requires are MQTT broker which can either run as an app or in the same 
 The app publishes the following MQTT topics:
 
 **Topic: "mosaiq.lenze.pyprofgen/parameteronconnect"**
-Value example: "{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}"
+Value example: 
+```json
+"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}"
+```
 
 **Topic: "mosaiq.lenze.pyprofgen/monitor"**
-Value example: "{"actVelocity": 0, "actPosition": 0, "actRotarySpeed": 0.0}"
+Value example: 
+```json
+"{"actVelocity": 0, "actPosition": 0, "actRotarySpeed": 0.0}"
+```
 
 The app subscribes to the following topics
 **Topic: "mosaiq.lenze.pyprofgen/parameter"**
-Value example: "{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}"
+Value example: 
+```json
+"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}"
+```
 
 **Topic: "mosaiq.lenze.pyprofgen/command"**
 Value examples:
+```
 Stop: "MC_MoveStop"
 Move relative: MC_MoveRelative
 Move absolute: MC_MoveAbsolute
 Automatic mode: MC_LE_AutomaticMode
+```
 
 ### Published Ports By This App
 | Container Port | Protocol | Description |
@@ -160,9 +178,11 @@ MQTT_BROKER_PORT: Port of broker. If not defined: 1883
 <!-- INFORMATION -->
 ## Information
 | Developer | Compatibility | Copyright | License |
-| [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | Copyright [2021] [Lenze SE] | MIT License. See `LICENSE` for more information. |
+|-|-|-|
+| [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | © 2021- [Lenze SE] | MIT License. See `LICENSE` for more information. |
 
 
 ## Legal Statements
 "Python®" and the Python logos are trademarks or registered trademarks of the Python Software Foundation, used by Lenze with permission from the Foundation.
+<br />
 "Eclipse®", "Mosquitto®", Paho® and the respective logos are trademarks or registered trademarks of the Eclipse Foundation.
