@@ -78,19 +78,19 @@
 <br />
 <img src="images/gallery1.png" 
      alt="Gallery 1" 
-     style="float:left; margin-right: 10px;" 
+     style="float:left; vertical-align:top; margin-right: 10px;" 
      width="200"/>
 <img src="images/gallery2.png" 
      alt="Gallery 2" 
-     style="float:left; margin-right: 10px;" 
+     style="float:left; vertical-align:top; margin-right: 10px;" 
      width="200"/>
 <img src="images/gallery3.png" 
      alt="Gallery 3" 
-     style="float:left; margin-right: 10px;" 
+     style="float:left; vertical-align:top; margin-right: 10px;" 
      width="200"/>
 <img src="images/gallery4.png" 
      alt="Gallery 4" 
-     style="float:left; margin-right: 10px;" 
+     style="float:left; vertical-align:top; margin-right: 10px;" 
      width="200"/>
 
 
@@ -126,17 +126,6 @@ The app publishes the following MQTT topics:
 | mosaiq.lenze.pyprofgen/monitor | ``` "{"actVelocity": 0, "actPosition": 0, "actRotarySpeed": 0.0}" ``` |
 | mosaiq.lenze.pyprofgen/parameter | ``` "{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}" ``` |
 | mosaiq.lenze.pyprofgen/command | Stop: "MC_MoveStop" <br /> Move relative: MC_MoveRelative <br /> Move absolute: MC_MoveAbsolute <br /> Automatic mode: MC_LE_AutomaticMode |
-
-
-
-
-The app subscribes to the following topics
-**Topic: "mosaiq.lenze.pyprofgen/parameter"**
-Value example: 
-
-
-**Topic: ""**
-Value examples:
 
 
 ### Published Ports By This App
