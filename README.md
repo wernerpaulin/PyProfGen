@@ -21,7 +21,7 @@
   <h3 align="center">PyProfGen</h3>
 
   <p align="center">
-    This profile generator is written in Python 3 using asyncio for concurrent of coroutines and paho-mqtt for communication.
+    This profile generator is written in Python® 3 using asyncio for concurrent of coroutines and paho-mqtt for communication.
   </p>
 </p>
 
@@ -75,6 +75,7 @@
 * Stop movement
 
 **Gallery**
+<br />
 <img src="images/gallery1.png" 
      alt="Gallery 1" 
      style="float:left; margin-right: 10px;" 
@@ -119,33 +120,31 @@ This app requires are MQTT broker which can either run as an app or in the same 
 ### Interfaces
 The app publishes the following MQTT topics:
 
-**Topic: "mosaiq.lenze.pyprofgen/parameteronconnect"**
-Value example: 
-```json
-"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}"
-```
+| Topic | Value Example |
+| -------------- | ----------- |
+| mosaiq.lenze.pyprofgen/parameteronconnect | ```
+"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}" ``` |
+| mosaiq.lenze.pyprofgen/monitor | ```
+"{"actVelocity": 0, "actPosition": 0, "actRotarySpeed": 0.0}" ``` |
+| mosaiq.lenze.pyprofgen/parameter | ```
+"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}" ``` |
+| mosaiq.lenze.pyprofgen/command | ```
+Stop: "MC_MoveStop"
+Move relative: MC_MoveRelative
+Move absolute: MC_MoveAbsolute
+Automatic mode: MC_LE_AutomaticMode ``` |
 
-**Topic: "mosaiq.lenze.pyprofgen/monitor"**
-Value example: 
-```json
-"{"actVelocity": 0, "actPosition": 0, "actRotarySpeed": 0.0}"
-```
+
+
 
 The app subscribes to the following topics
 **Topic: "mosaiq.lenze.pyprofgen/parameter"**
 Value example: 
-```json
-"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}"
-```
 
-**Topic: "mosaiq.lenze.pyprofgen/command"**
+
+**Topic: ""**
 Value examples:
-```
-Stop: "MC_MoveStop"
-Move relative: MC_MoveRelative
-Move absolute: MC_MoveAbsolute
-Automatic mode: MC_LE_AutomaticMode
-```
+
 
 ### Published Ports By This App
 | Container Port | Protocol | Description |
@@ -180,7 +179,7 @@ MQTT_BROKER_PORT: Port of broker. If not defined: 1883
 <!-- INFORMATION -->
 ## Information
 | Developer | Compatibility | Copyright | License |
-|-|-|-|
+| ----------| ------------- |---------- | ------- |
 | [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | © 2021- [Lenze SE] | MIT License. See `LICENSE` for more information. |
 
 
