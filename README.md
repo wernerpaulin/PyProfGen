@@ -21,7 +21,7 @@
   <h3 align="center">PyProfGen</h3>
 
   <p align="center">
-    This profile generator is written in Python® 3 generates a velocity and position profile depending on set parameters like target position, velocity and acceleration.
+    This profile generator is written in Python® 3. It generates a velocity and position profile depending on set parameters like target position, velocity and acceleration.
   </p>
 </p>
 
