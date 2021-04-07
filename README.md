@@ -122,17 +122,10 @@ The app publishes the following MQTT topics:
 
 | Topic | Value Example |
 | -------------- | ----------- |
-| mosaiq.lenze.pyprofgen/parameteronconnect | ```
-"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}" ``` |
-| mosaiq.lenze.pyprofgen/monitor | ```
-"{"actVelocity": 0, "actPosition": 0, "actRotarySpeed": 0.0}" ``` |
-| mosaiq.lenze.pyprofgen/parameter | ```
-"{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}" ``` |
-| mosaiq.lenze.pyprofgen/command | ```
-Stop: "MC_MoveStop"
-Move relative: MC_MoveRelative
-Move absolute: MC_MoveAbsolute
-Automatic mode: MC_LE_AutomaticMode ``` |
+| mosaiq.lenze.pyprofgen/parameteronconnect | ``` "{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}" ``` |
+| mosaiq.lenze.pyprofgen/monitor | ``` "{"actVelocity": 0, "actPosition": 0, "actRotarySpeed": 0.0}" ``` |
+| mosaiq.lenze.pyprofgen/parameter | ``` "{"setDistance": 200, "setVelocity": 300, "setAcceleration": 200, "maxPosition": 1000000000, "minPosition": -1000000000, "maxVelocity": 500, "maxAccleration": 1000.0, "maxMotorRotarySpeed": 2000.0, "automaticCycleStopTime": 1.0}" ``` |
+| mosaiq.lenze.pyprofgen/command | ``` Stop: "MC_MoveStop" <br /> Move relative: MC_MoveRelative <br /> Move absolute: MC_MoveAbsolute <br /> Automatic mode: MC_LE_AutomaticMode ``` |
 
 
 
