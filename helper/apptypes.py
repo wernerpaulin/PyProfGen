@@ -75,7 +75,7 @@ class RTapp:
         try:
             self.mqttClient.connect(self.brokerIP, self.brokerPort, self.brokerKeepalive)
         except Exception as e:
-            print("MQTT: Fundamental error connecting: {0}".format(e))
+            print("MQTT: Fundamental error: {0}".format(e))
             print("MQTT: Trying to connect...")
             time.sleep(1)
             self.mqttSaveConnect()
@@ -114,7 +114,7 @@ class RTapp:
     def onMqttBrokerConnected(self):
         print("MQTT: RT App <{0}> connected to broker at: <{1}>".format(self.appName, self.brokerIP))    #this print() is necessary so that the following code is executed - no idea why?
 
-        #send parameters for subscribes to initalize their default data e.g. in UI
+        #send parameters for subscribers to initalize their default data e.g. in UI
         try:
             print("MQTT: publishing all parameters of RT App <{0}> for subscribes to initalize their default data e.g. in UI".format(self.appName))    
             for topic in self.publicationListOnConnect:
@@ -137,3 +137,21 @@ class RTapp:
                     print("MQTT: Error subscribing to topic <{0}>: {1}".format(topic, e))
         except Exception as e:
             print("MQTT: Error subscribing to topic: <{0}>".format(e))
+
+    #when the UI connects to the broker send onConnect values to allow the UI to (re-)initalize itself
+    def onUserInterfaceConnected(self):
+        print("MQTT: UI requests a publish of on-connect parameters of RT App <{0}>".format(self.appName))
+
+        #send parameters for subscribees to initalize their default data e.g. in UI
+        try:
+            print("MQTT: publishing all parameters of RT App <{0}> for subscribes to initalize their default data e.g. in UI".format(self.appName))    
+            for topic in self.publicationListOnConnect:
+                try:
+                    sourceDataObj = self.publicationListOnConnect[topic]
+                    self.mqttClient.publish(topic, json.dumps(sourceDataObj.__dict__))
+        
+                except Exception as e:
+                    print("MQTT: Error publishing topic <{0}>: {1}".format(topic, e))
+        except Exception as e:
+            print("MQTT: Error publishing topic: <{0}>".format(e))
+

@@ -27,6 +27,7 @@ COMMAND_ID_MOVE_RELATIVE = "MC_MoveRelative"
 COMMAND_ID_MOVE_ABSOLUTE = "MC_MoveAbsolute"
 COMMAND_ID_MOVE_STOP = "MC_MoveStop"
 COMMAND_ID_AUTOMATIC_MODE = "MC_LE_AutomaticMode"
+COMMAND_ID_UI_ON_CONNECT = "UI_ON_CONNECT"
 COMMAND_ID_NO_COMMAND = ""
 
 
@@ -132,7 +133,10 @@ class belt(RTapp):
 
             else:
                 self.automaticCycleStopTimer = 0
-            
+
+        elif (self.commandInterface.command == COMMAND_ID_UI_ON_CONNECT):
+            self.commandInterface.command = COMMAND_ID_NO_COMMAND
+            super().onUserInterfaceConnected()
 
         #execute profile generator
         self.profGenMovement.update()
