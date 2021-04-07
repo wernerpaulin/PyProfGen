@@ -9,10 +9,6 @@ import time
 #sudo pip3 install paho-mqtt
 #sudo apt-get install -y mosquitto mosquitto-clients
 #sudo systemctl enable mosquitto.service
-#https://www.ev3dev.org/docs/tutorials/sending-and-receiving-messages-with-mqtt/
-#http://www.steves-internet-guide.com/python-mqtt-publish-subscribe/
-#open port 1883 in Windows: https://iot.stackexchange.com/questions/1093/how-to-modify-mosquittos-windows-firewall-inbound-rule-to-only-allow-connection
-#https://pypi.org/project/paho-mqtt/#callbacks
 
 
 def PubSub_onConnect(client, userdata, flags, rc):
