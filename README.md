@@ -5,8 +5,11 @@
  https://github.com/wernerpaulin/PyProfGen
 
 <!-- APP SHIELDS -->
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![GitHub issues](https://img.shields.io/github/issues/wernerpaulin/PyProfGen)](https://github.com/wernerpaulin/PyProfGen/issues)
+[![GitHub forks](https://img.shields.io/github/forks/wernerpaulin/PyProfGen)](https://github.com/wernerpaulin/PyProfGen/network)
+[![GitHub stars](https://img.shields.io/github/stars/wernerpaulin/PyProfGen)](https://github.com/wernerpaulin/PyProfGen/stargazers)
+[![GitHub license](https://img.shields.io/github/license/wernerpaulin/PyProfGen)](https://github.com/wernerpaulin/PyProfGen/blob/main/LICENSE)
+
 
 <!-- APP LOGO -->
 <br />
@@ -56,6 +59,7 @@
         <li><a href="#volumes">Volumes</a></li>
       </ul>
     <li><a href="#information">Information</a></li>
+    <li><a href="#legal-statemets">Legal Statements</a></li>
   </ol>
 </details>
 
@@ -67,23 +71,23 @@
 ![Picture 1](images/gallery3.png "Picture Title")
 ![Picture 1](images/gallery4.png "Picture Title")
 
-Features:
-- 100ms update interval 
-- velocity and rotary speed profile
-- position profile
-- dynamic deceleration ramp calculation in position control mode
+**Features**:
+* 100ms update interval 
+* velocity and rotary speed profile
+* position profile
+* dynamic deceleration ramp calculation in position control mode
 
-Operating modes:
-- Velocity control
-- Absolute position control
-- Relative position control
-- Automatic mode: cases the profile generator to initiate relative movements 
-- Stop movement
+**Operating modes**:
+* Velocity control
+* Absolute position control
+* Relative position control
+* Automatic mode: cases the profile generator to initiate relative movements 
+* Stop movement
 
 ### Built With
-* [Python](https://www.python.org/)
-* [Eclipse Paho](https://www.eclipse.org/paho/)
-* [Docker](https://www.docker.com/)
+* [Python®](https://www.python.org/)
+* [Eclipse Paho®](https://www.eclipse.org/paho/)
+* [Docker®](https://www.docker.com/)
 
 
 <!-- GETTING STARTED -->
@@ -155,32 +159,10 @@ MQTT_BROKER_PORT: Port of broker. If not defined: 1883
 
 <!-- INFORMATION -->
 ## Information
-
-Developer
-Compatibility
-Size on Runtime
-Copyright
-License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+| Developer | Compatibility | Copyright | License |
+| [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | Copyright [2021] [Lenze SE] | MIT License. See `LICENSE` for more information. |
 
 
-
-Werner Paulin - werner.paulin@lenze.com
-
-
-"Python" and the Python logos are trademarks or registered trademarks of the Python Software Foundation, used by Lenze with permission from the Foundation.
-Eclipse
-Paho
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-<!-- [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge -->
-[issues-url]: https://github.com/wernerpaulin/PyProfGen/issues
-<!-- [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge -->
-[license-url]: https://github.com/wernerpaulin/PyProfGen/blob/main/LICENSE
-
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+## Legal Statements
+"Python®" and the Python logos are trademarks or registered trademarks of the Python Software Foundation, used by Lenze with permission from the Foundation.
+"Eclipse®", "Mosquitto®", Paho® and the respective logos are trademarks or registered trademarks of the Eclipse Foundation.
