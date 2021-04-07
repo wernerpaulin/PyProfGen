@@ -61,6 +61,20 @@
 
 <!-- ABOUT THE APP -->
 ## About The App
+**Features**:
+* 100ms update interval 
+* velocity and rotary speed profile
+* position profile
+* dynamic deceleration ramp calculation in position control mode
+
+**Operating modes**:
+* Velocity control
+* Absolute position control
+* Relative position control
+* Automatic mode: cases the profile generator to initiate relative movements 
+* Stop movement
+
+**Gallery**
 <img src="images/gallery1.png" 
      alt="Gallery 1" 
      style="float:left; margin-right: 10px;" 
@@ -78,18 +92,6 @@
      style="float:left; margin-right: 10px;" 
      width="200"/>
 
-**Features**:
-* 100ms update interval 
-* velocity and rotary speed profile
-* position profile
-* dynamic deceleration ramp calculation in position control mode
-
-**Operating modes**:
-* Velocity control
-* Absolute position control
-* Relative position control
-* Automatic mode: cases the profile generator to initiate relative movements 
-* Stop movement
 
 ### Built With
 * [Python®](https://www.python.org/)
