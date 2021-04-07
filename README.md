@@ -21,7 +21,7 @@
   <h3 align="center">PyProfGen</h3>
 
   <p align="center">
-    This profile generator is written in Python® 3 generates a velocity and position profile depending on set parameters like target position, speed and acceleration.
+    This profile generator is written in Python® 3 generates a velocity and position profile depending on set parameters like target position, velocity and acceleration.
   </p>
 </p>
 
@@ -83,10 +83,10 @@
      width="200"/>
 
 ### Features
-* 100ms update interval 
-* velocity and rotary speed profile
-* position profile
-* dynamic deceleration ramp calculation in position control mode
+* 100ms scan interval 
+* Generates a velocity and rotary speed profile
+* Generates position profile
+* Dynamic deceleration ramp calculation in position control mode
 
 ### Operating Modes
 * Velocity control
@@ -113,9 +113,9 @@ Find this app in the App Store and use it in a machine.
 This app requires a MQTT broker which can either run as an app or on a different hose but in the same network of the Runtime.
 
 ### Usage
-1. This app is per default connecting to the local Eclipse Mosquitto MQTT broker (available as app). If you choose to use another broker set or change the <a href="#environmental-variables">environmental variable "MQTT_BROKER_IP"</a>.
-2. This app is per default connection to the broker via port 1883 which is the default port for MQTT. If you have multiple broker running in parallel each of these brokers require a separate port. Please sett the <a href="#environmental-variables">environmental variable "MQTT_BROKER_PORT"</a> accordingly.
-3. An easy way to control this app is using Node-RED.
+1. This app is per default connecting to the Eclipse Mosquitto MQTT broker app on the Runtime. If you choose to use another broker set or change the <a href="#environmental-variables">environmental variable "MQTT_BROKER_IP"</a>.
+2. This app is per default connecting to the broker via port 1883 which is the default port for MQTT. If you have multiple brokers running in parallel each of these brokers require a separate port. Please set the <a href="#environmental-variables">environmental variable "MQTT_BROKER_PORT"</a> accordingly.
+3. An easy way to control this app is using teh Node-RED app.
 
 
 <!-- COMMUNICATION -->
@@ -142,9 +142,6 @@ The app publishes the following MQTT topics:
 
 ### Environmental Variables
 Environmental variables are used to initialize or define a certain functionality of an app:
-: IP address of broker. If not defined: "mosaiq.eclipsemosquitto"
-MQTT_BROKER_PORT: Port of broker. If not defined: 1883
-
 | Variable | Default Value | Changeable by User | Description | 
 | -------- | ------------- | ------------------ | ----------- |
 | MQTT_BROKER_IP | mosaiq.eclipsemosquitto | yes | Hostname or IP address of MQTT broker | 
@@ -152,7 +149,7 @@ MQTT_BROKER_PORT: Port of broker. If not defined: 1883
 | MQTT_BROKER_KEEPALIVE | 60 | yes | Maximum time that this app does not communicate with the broker |
 
 ### Volumes
-Mount points are access points (like paths) to volumes provided to the app to read and write data:
+Mount points are access points to volumes (like paths) provided to the app to read and write data:
 
 | Mount Point | Default Data | Changeable by User | Description | 
 | -------- | ------------- | ------------------ | ----------- |
@@ -167,6 +164,5 @@ Mount points are access points (like paths) to volumes provided to the app to re
 
 
 ## Legal Statements
-"Python®" and the Python logos are trademarks or registered trademarks of the Python Software Foundation, used by Lenze with permission from the Foundation.
-<br />
-"Eclipse®", "Mosquitto®", Paho® and the respective logos are trademarks or registered trademarks of the Eclipse Foundation.
+* "Python®" and the Python logos are trademarks or registered trademarks of the Python Software Foundation, used by Lenze with permission from the Foundation.
+* "Eclipse®", "Mosquitto®", Paho® and the respective logos are trademarks or registered trademarks of the Eclipse Foundation.
