@@ -65,7 +65,6 @@
 <!-- ABOUT THE APP -->
 ## About The App
 ### Gallery
-<br />
 <img src="images/gallery1.png" 
      alt="Gallery 1" 
      style="float:left; margin-right: 10px;" 
