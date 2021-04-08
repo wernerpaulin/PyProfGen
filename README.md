@@ -159,9 +159,9 @@ Mount points are access points to volumes (like paths) provided to the app to re
 
 <!-- INFORMATION -->
 ## Information
-| Developer | Compatibility | Copyright | License |
-| ----------| ------------- |---------- | ------- |
-| [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | © 2021- [Lenze SE](https://www.lenze.com/) | MIT License. See `LICENSE` for more information. |
+| Developer | Compatibility | Size on Runtime | Copyright | License |
+| ----------| ------------- |---------------- | --------- | ------- |
+| [Lenze SE](https://www.lenze.com/) | Requires Runtime 1.0 or later | 61.7 MB | © 2021- [Lenze SE](https://www.lenze.com/) | MIT License. See `LICENSE` for more information. |
 
 
 ## Legal Statements
