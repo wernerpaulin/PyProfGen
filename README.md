@@ -2,7 +2,8 @@
 
 # PyProfGen
  Speed and position profile generator made in Python
- https://github.com/wernerpaulin/PyProfGen
+ <br />
+ Link to Repository: https://github.com/wernerpaulin/PyProfGen
 
 <!-- APP SHIELDS -->
 [![GitHub issues](https://img.shields.io/github/issues/wernerpaulin/PyProfGen)](https://github.com/wernerpaulin/PyProfGen/issues)
