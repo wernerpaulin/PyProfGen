@@ -111,7 +111,7 @@ Find this app in the App Store and use it in a machine.
 
 ### Prerequisites
 
-This app requires a MQTT broker which can either run as an app or on a different hose but in the same network of the Runtime.
+This app requires a MQTT broker which can either run as an app or on a different host but in the same network of the Runtime.
 
 ### Usage
 1. This app is per default connecting to the Eclipse Mosquitto MQTT broker app on the Runtime. If you choose to use another broker set or change the <a href="#environmental-variables">environmental variable "MQTT_BROKER_IP"</a>.
