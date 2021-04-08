@@ -165,5 +165,6 @@ Mount points are access points to volumes (like paths) provided to the app to re
 
 
 ## Legal Statements
-* "Python®" and the Python logos are trademarks or registered trademarks of the Python Software Foundation, used by Lenze with permission from the Foundation.
+* "Python®" and the Python logos are trademarks or registered trademarks of the Python Software Foundation.
 * "Eclipse®", "Mosquitto®", Paho® and the respective logos are trademarks or registered trademarks of the Eclipse Foundation.
+* "Docker®" and "Docker Hub®" are trademarks or registered trademarks of Docker.
