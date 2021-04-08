@@ -136,13 +136,13 @@ The app publishes the following MQTT topics:
 | Container Port | Protocol | Description |
 | -------------- | -------- | ----------- |
 | n.a. | | |
-
+**Please note: Ports can be mapped to different host ports in the machine settings**
 
 <!-- DATA MANAGEMENT -->
 ## Data Management
 
 ### Environmental Variables
-Environmental variables are used to initialize or define a certain functionality of an app:
+Environmental variables are used to initialize or define a certain functionality of an app and can be changed in the machine settings:
 | Variable | Default Value | Changeable by User | Description | 
 | -------- | ------------- | ------------------ | ----------- |
 | MQTT_BROKER_IP | mosaiq.eclipsemosquitto | yes | Hostname or IP address of MQTT broker | 
