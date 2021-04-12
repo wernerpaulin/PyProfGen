@@ -136,6 +136,7 @@ The app publishes the following MQTT topics:
 | Container Port | Protocol | Description |
 | -------------- | -------- | ----------- |
 | n.a. | | |
+
 **Please note: Ports can be mapped to different host ports in the machine settings**
 
 <!-- DATA MANAGEMENT -->
