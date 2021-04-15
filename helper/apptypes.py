@@ -10,6 +10,7 @@ import time
 #sudo apt-get install -y mosquitto mosquitto-clients
 #sudo systemctl enable mosquitto.service
 
+MQTT_ERR_SUCCESS = 0
 
 def PubSub_onConnect(client, userdata, flags, rc):
     if (rc != 0):
@@ -132,9 +133,21 @@ class RTapp:
             print("MQTT: subsribing to all topics the RT App <{0}> wants to consume".format(self.appName))    
             for topic in self.subscriptionList:
                 try:
-                    self.mqttClient.subscribe(topic)
+                    retSubscribe, mid = self.mqttClient.subscribe(topic)        #mid ...message id
+                    if (retSubscribe != MQTT_ERR_SUCCESS):
+                        print("MQTT: Bad return code when subscribing to topic <{0}>: {1}".format(topic, retSubscribe))
+                        break
+
                 except Exception as e:
                     print("MQTT: Error subscribing to topic <{0}>: {1}".format(topic, e))
+            
+            #subscription failed -> try again
+            if (retSubscribe != MQTT_ERR_SUCCESS):
+                print("MQTT: Trying to subscribe again...")
+                time.sleep(1)
+                self.onMqttBrokerConnected()
+
+            
         except Exception as e:
             print("MQTT: Error subscribing to topic: <{0}>".format(e))
 
