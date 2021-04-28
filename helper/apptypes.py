@@ -131,9 +131,11 @@ class RTapp:
         #subscribe to all topics the app wants to consume
         try:
             print("MQTT: subsribing to all topics the RT App <{0}> wants to consume".format(self.appName))    
+            retSubscribe = MQTT_ERR_SUCCESS
+            mid = 0 #mid ...message id
             for topic in self.subscriptionList:
                 try:
-                    retSubscribe, mid = self.mqttClient.subscribe(topic)        #mid ...message id
+                    retSubscribe, mid = self.mqttClient.subscribe(topic)        
                     if (retSubscribe != MQTT_ERR_SUCCESS):
                         print("MQTT: Bad return code when subscribing to topic <{0}>: {1}".format(topic, retSubscribe))
                         break
