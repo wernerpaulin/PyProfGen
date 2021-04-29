@@ -1,7 +1,7 @@
 #https://docs.docker.com/engine/reference/builder/
 #docker build --rm -t pyprofgen:1.0.1 .
 #docker save -o pyprofgen-1-0-1.tar pyprofgen:1.0.1
-#docker run -d --rm --network host -e MQTT_BROKER_IP=192.168.1.100 -e MQTT_BROKER_PORT=1883 --name pyprofgen-app pyprofgen-img
+#docker run -d --rm --network host -e MQTT_BROKER_IP=192.168.1.100 -e MQTT_BROKER_PORT=1883 --name pyprofgen-app pyprofgen
 #docker logs pyprofgen-app
 #docker container stop pyprofgen-app
 
