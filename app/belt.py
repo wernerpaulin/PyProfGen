@@ -10,17 +10,16 @@ from helper.env_support import initializeENV
 import os
 
 #check for environmental variables in case this app is started in a docker container
-MQTT_BROKER_IP = initializeENV("MQTT_BROKER_IP", "mosaiq.eclipsemosquitto") #mosaiq.eclipsemosquitto
-print("####### INFO: default MQTT_BROKER_IP set to <mosaiq.eclipsemosquitto> #######")
+MQTT_BROKER_IP = initializeENV("MQTT_BROKER_IP", "localhost")
 MQTT_BROKER_PORT = initializeENV("MQTT_BROKER_PORT", 1883)
 MQTT_BROKER_KEEPALIVE = initializeENV("MQTT_BROKER_KEEPALIVE", 60)
 
 #MQTT: the topic is formed of the app name: e.g. \Belt\command + JSON-string with all variable/values pairs
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name
-TOPIC_COMMAND = "mosaiq.lenze.pyprofgen/command"
-TOPIC_PARAMETER = "mosaiq.lenze.pyprofgen/parameter"
-TOPIC_MONITOR = "mosaiq.lenze.pyprofgen/monitor"
-TOPIC_PARAMETER_ON_CONNECT= "mosaiq.lenze.pyprofgen/parameteronconnect"
+TOPIC_COMMAND = "pyprofgen.lenze.mosaiq/command"
+TOPIC_PARAMETER = "pyprofgen.lenze.mosaiq/parameter"
+TOPIC_MONITOR = "pyprofgen.lenze.mosaiq/monitor"
+TOPIC_PARAMETER_ON_CONNECT= "pyprofgen.lenze.mosaiq/parameteronconnect"
 
 COMMAND_ID_MOVE_VELOCITY = "MC_MoveVelocity"
 COMMAND_ID_MOVE_RELATIVE = "MC_MoveRelative"
