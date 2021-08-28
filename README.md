@@ -114,7 +114,7 @@ This app requires a MQTT broker which can either run as an app or on a different
 
 ### Usage
 1. This app is per default connecting to the Eclipse Mosquitto MQTT broker app on the Runtime. If you choose to use another broker change the <a href="#environmental-variables">environmental variable "MQTT_BROKER_IP"</a>.
-2. This app is per default connecting to the broker via port 1883 which is the default port for MQTT. If you have multiple brokers running in parallel each of these brokers require a separate port. Please set the <a href="#environmental-variables">environmental variable "MQTT_BROKER_PORT"</a> accordingly.
+2. This app is per default connecting to the broker via port 1883 which is the default port for MQTT. If you have multiple brokers running in parallel each of these brokers requires a separate port. Please set the <a href="#environmental-variables">environmental variable "MQTT_BROKER_PORT"</a> accordingly.
 3. An easy way to control this app is using the Node-RED app.
 
 
