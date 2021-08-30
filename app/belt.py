@@ -11,8 +11,8 @@ import os
 
 #check for environmental variables in case this app is started in a docker container
 MQTT_BROKER_IP = initializeENV("MQTT_BROKER_IP", "localhost")
-MQTT_BROKER_PORT = initializeENV("MQTT_BROKER_PORT", 1883)
-MQTT_BROKER_KEEPALIVE = initializeENV("MQTT_BROKER_KEEPALIVE", 60)
+MQTT_BROKER_PORT = int(initializeENV("MQTT_BROKER_PORT", 1883))
+MQTT_BROKER_KEEPALIVE = int(initializeENV("MQTT_BROKER_KEEPALIVE", 60))
 
 #MQTT: the topic is formed of the app name: e.g. \Belt\command + JSON-string with all variable/values pairs
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name
