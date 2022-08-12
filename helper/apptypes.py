@@ -76,11 +76,10 @@ class RTapp:
         try:
             self.mqttClient.connect(self.brokerIP, self.brokerPort, self.brokerKeepalive)
         except Exception as e:
-            print("MQTT: Fundamental error: {0}".format(e))
-            print("MQTT: Trying to connect...")
-            time.sleep(1)
-            self.mqttSaveConnect()
-
+            print("MQTT: Error connecting to broker: {0}".format(e))
+            print("MQTT: shutting down in 10s, trying again at next start")
+            time.sleep(10)               #sleep 10s to allow Docker restart policy
+            raise SystemExit
 
     def addSubscription(self, topic, destinationDataObj):
         #MQTT

@@ -8,6 +8,7 @@ CYCLE_TIME_APP = 0.2
 
 """ CYCLIC SYSTEM """
 try:
+    print("Starting app")
     """ START CYCLIC EXECUTION """
     loop = asyncio.get_event_loop()
     asyncio.ensure_future(belt.cyclic(CYCLE_TIME_APP))

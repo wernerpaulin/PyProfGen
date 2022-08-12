@@ -1,0 +1,26 @@
+#docker-compose up
+version: "3.4"
+services:
+  pyprofgen:
+    image: pyprofgen:1.1.0
+    container_name: pyprofgen.lenze.nupano
+    environment:
+      - MQTT_BROKER_IP=eclipse-mosquitto.lenze.nupano
+    restart: always
+
+  node-red:
+    image: node-red:2.1.4-1-12
+    container_name: node-red.lenze.nupano
+    ports:
+      - "1880:1880"
+    volumes:
+      - .:/data
+    restart: always
+
+  mqtt:
+    image: eclipse-mosquitto:1.6.14
+    container_name: eclipse-mosquitto.lenze.nupano
+    ports:
+      - "1883:1883"
+    restart: always
+    

@@ -1,0 +1,1203 @@
+[
+    {
+        "id": "8b6496d0edea5f9b",
+        "type": "tab",
+        "label": "The Incredible Machine",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ed3e68118df2bb87",
+        "type": "tab",
+        "label": "MQTT Monitor",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2a014015.cbe44",
+        "type": "ui_group",
+        "name": "MQTT Monitor",
+        "tab": "72c133a.bb0fecc",
+        "order": 1,
+        "disp": true,
+        "width": "15",
+        "collapse": false
+    },
+    {
+        "id": "72c133a.bb0fecc",
+        "type": "ui_tab",
+        "name": "MQTT Monitor",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8a3c5e4f514d1f3e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ca0726f068a599e1",
+        "type": "mqtt-broker",
+        "name": "Eclipse Mosquitto",
+        "broker": "eclipse-mosquitto.lenze.nupano",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b68e50ed.da4e1",
+        "type": "ui_group",
+        "name": "Commands",
+        "tab": "d3edca88.296ae8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9f65dbac.c003d8",
+        "type": "ui_group",
+        "name": "Parameters",
+        "tab": "d3edca88.296ae8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "57b15afd.5dd974",
+        "type": "ui_group",
+        "name": "Position",
+        "tab": "d3edca88.296ae8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c7a2741f.257fe8",
+        "type": "ui_group",
+        "name": "Velocity",
+        "tab": "d3edca88.296ae8",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d3edca88.296ae8",
+        "type": "ui_tab",
+        "name": "The Incredible Machine",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8eb31f40.b0d08",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://mosaiq.node-red:4840/MosaiqRuntime",
+        "secpol": "None",
+        "secmode": "None",
+        "login": false
+    },
+    {
+        "id": "db3b79a7.0d5508",
+        "type": "modbus-client",
+        "name": "Lenze i550.01",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "tcpHost": "10.200.8.20",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "52c7b1e8.e41ba",
+        "type": "ui_group",
+        "name": "Saw Tooth Sample",
+        "tab": "213410a.66cdff",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "213410a.66cdff",
+        "type": "ui_tab",
+        "name": "Saw Tooth Sample",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a7819f074a12e302",
+        "type": "Mosaiq Runtime",
+        "configName": "Local Runtime",
+        "host": "host.docker.internal",
+        "intercomPort": "61105",
+        "port": "61100"
+    },
+    {
+        "id": "9848cd2e3ca8df22",
+        "type": "mqtt-broker",
+        "name": "local_docker",
+        "broker": "eclipse-mosquitto.lenze.nupano",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "21d2ed0d7bf1b981",
+        "type": "mqtt in",
+        "z": "8b6496d0edea5f9b",
+        "name": "mosaiq.lenze.pyprofgen/monitor",
+        "topic": "pyprofgen.lenze.mosaiq/monitor",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "ca0726f068a599e1",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 170,
+        "y": 1060,
+        "wires": [
+            [
+                "90b72b24b634847a",
+                "28263fbaafa8d12f"
+            ]
+        ]
+    },
+    {
+        "id": "eeafa997214e2862",
+        "type": "ui_button",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "b68e50ed.da4e1",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Move velocity",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "MC_MoveVelocity",
+        "payloadType": "str",
+        "topic": "command",
+        "x": 120,
+        "y": 600,
+        "wires": [
+            [
+                "7bd4d715e8e7d682"
+            ]
+        ]
+    },
+    {
+        "id": "90b72b24b634847a",
+        "type": "json",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 1060,
+        "wires": [
+            [
+                "b7a3f891992e04ba",
+                "61fa734f3b5445b6",
+                "7e82f36d763f49f3"
+            ]
+        ]
+    },
+    {
+        "id": "29deefd661ac1703",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "convert to JS object",
+        "func": "var jsObj = {}\njsObj[msg.topic] = msg.payload\nmsg.payload = jsObj\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1390,
+        "y": 240,
+        "wires": [
+            [
+                "f31efed19ada6b8d"
+            ]
+        ]
+    },
+    {
+        "id": "f31efed19ada6b8d",
+        "type": "json",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1570,
+        "y": 240,
+        "wires": [
+            [
+                "2337744252cfd7e0"
+            ]
+        ]
+    },
+    {
+        "id": "9adbfc10fccb0dc4",
+        "type": "ui_slider",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "label": "Set velocity",
+        "tooltip": "",
+        "group": "9f65dbac.c003d8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "setVelocity",
+        "min": "-500",
+        "max": "500",
+        "step": "10",
+        "x": 1010,
+        "y": 100,
+        "wires": [
+            [
+                "29deefd661ac1703"
+            ]
+        ]
+    },
+    {
+        "id": "09a3c25b955c210e",
+        "type": "ui_numeric",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "label": "Set distance",
+        "tooltip": "",
+        "group": "9f65dbac.c003d8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "setDistance",
+        "format": "{{value}}",
+        "min": "-10000",
+        "max": "10000",
+        "step": "100",
+        "x": 1010,
+        "y": 160,
+        "wires": [
+            [
+                "29deefd661ac1703"
+            ]
+        ]
+    },
+    {
+        "id": "dfaaab03759e1bec",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract set velocity",
+        "func": "msg.payload = msg.payload[\"setVelocity\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 100,
+        "wires": [
+            [
+                "9adbfc10fccb0dc4"
+            ]
+        ]
+    },
+    {
+        "id": "a895130eda8bd9a8",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract set distance",
+        "func": "msg.payload = msg.payload[\"setDistance\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 730,
+        "y": 160,
+        "wires": [
+            [
+                "09a3c25b955c210e"
+            ]
+        ]
+    },
+    {
+        "id": "28545e5eabdffbf4",
+        "type": "ui_chart",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "57b15afd.5dd974",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Actual position",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "20",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1020,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "04eb5c137246c5cb",
+        "type": "ui_chart",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "c7a2741f.257fe8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Actual velocity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "20",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1020,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28cab46199697f54",
+        "type": "ui_button",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "b68e50ed.da4e1",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Move relative",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "MC_MoveRelative",
+        "payloadType": "str",
+        "topic": "command",
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "7bd4d715e8e7d682"
+            ]
+        ]
+    },
+    {
+        "id": "7bd4d715e8e7d682",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "convert to JS object",
+        "func": "var jsObj = {}\njsObj[msg.topic] = msg.payload\nmsg.payload = jsObj\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 730,
+        "y": 660,
+        "wires": [
+            [
+                "3d6fbe0d50cfc170"
+            ]
+        ]
+    },
+    {
+        "id": "3d6fbe0d50cfc170",
+        "type": "json",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 950,
+        "y": 660,
+        "wires": [
+            [
+                "d994040cd19473b4"
+            ]
+        ]
+    },
+    {
+        "id": "d994040cd19473b4",
+        "type": "mqtt out",
+        "z": "8b6496d0edea5f9b",
+        "name": "pyprofgen.lenze.mosaiq/command",
+        "topic": "pyprofgen.lenze.mosaiq/command",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ca0726f068a599e1",
+        "x": 1200,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "b7a3f891992e04ba",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract actual velocity",
+        "func": "msg.payload = msg.payload[\"actVelocity\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 740,
+        "y": 940,
+        "wires": [
+            [
+                "04eb5c137246c5cb",
+                "827aae9cdfbe360e"
+            ]
+        ]
+    },
+    {
+        "id": "61fa734f3b5445b6",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract actual position",
+        "func": "msg.payload = msg.payload[\"actPosition\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 740,
+        "y": 1120,
+        "wires": [
+            [
+                "28545e5eabdffbf4",
+                "83e34cbce92d5671"
+            ]
+        ]
+    },
+    {
+        "id": "979125966a528148",
+        "type": "json",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 240,
+        "wires": [
+            [
+                "dfaaab03759e1bec",
+                "a895130eda8bd9a8",
+                "005dd2e682b2c6f8",
+                "4d91fdbb41da6644",
+                "7979167e221cf6d6",
+                "fdb84a79076c3331"
+            ]
+        ]
+    },
+    {
+        "id": "2337744252cfd7e0",
+        "type": "mqtt out",
+        "z": "8b6496d0edea5f9b",
+        "name": "mosaiq.lenze.pyprofgen/parameter",
+        "topic": "pyprofgen.lenze.mosaiq/parameter",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ca0726f068a599e1",
+        "x": 1800,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d03b658b6dca0611",
+        "type": "ui_button",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "b68e50ed.da4e1",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "MC_MoveStop",
+        "payloadType": "str",
+        "topic": "command",
+        "topicType": "str",
+        "x": 90,
+        "y": 540,
+        "wires": [
+            [
+                "7bd4d715e8e7d682"
+            ]
+        ]
+    },
+    {
+        "id": "27ef54f53468e855",
+        "type": "ui_slider",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "label": "Set acceleration",
+        "tooltip": "",
+        "group": "9f65dbac.c003d8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "setAcceleration",
+        "min": 0,
+        "max": "300",
+        "step": "10",
+        "x": 1020,
+        "y": 220,
+        "wires": [
+            [
+                "29deefd661ac1703"
+            ]
+        ]
+    },
+    {
+        "id": "005dd2e682b2c6f8",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract set acceleration",
+        "func": "msg.payload = msg.payload[\"setAcceleration\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 750,
+        "y": 220,
+        "wires": [
+            [
+                "27ef54f53468e855"
+            ]
+        ]
+    },
+    {
+        "id": "83e34cbce92d5671",
+        "type": "ui_text",
+        "z": "8b6496d0edea5f9b",
+        "group": "57b15afd.5dd974",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Actual position",
+        "format": "{{msg.payload | number:1}}",
+        "layout": "row-spread",
+        "x": 1020,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "827aae9cdfbe360e",
+        "type": "ui_gauge",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "c7a2741f.257fe8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Actual velocity",
+        "label": "units/s",
+        "format": "{{value | number:1}}",
+        "min": "-500",
+        "max": "500",
+        "colors": [
+            "#ff4a4a",
+            "#00ff00",
+            "#ff4a4a"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1020,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "063534341ac3e78e",
+        "type": "ui_slider",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "label": "Set max motor rotary speed",
+        "tooltip": "",
+        "group": "9f65dbac.c003d8",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "maxMotorRotarySpeed",
+        "min": "0",
+        "max": "2000",
+        "step": "100",
+        "x": 1060,
+        "y": 340,
+        "wires": [
+            [
+                "29deefd661ac1703"
+            ]
+        ]
+    },
+    {
+        "id": "4d91fdbb41da6644",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract max motor rotary speed",
+        "func": "msg.payload = msg.payload[\"maxMotorRotarySpeed\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 770,
+        "y": 340,
+        "wires": [
+            [
+                "063534341ac3e78e"
+            ]
+        ]
+    },
+    {
+        "id": "ae2335f4edef55e9",
+        "type": "ui_slider",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "label": "Set max velocity",
+        "tooltip": "",
+        "group": "9f65dbac.c003d8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "maxVelocity",
+        "min": "0",
+        "max": "2000",
+        "step": "100",
+        "x": 1020,
+        "y": 280,
+        "wires": [
+            [
+                "29deefd661ac1703"
+            ]
+        ]
+    },
+    {
+        "id": "7979167e221cf6d6",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract max velocity",
+        "func": "msg.payload = msg.payload[\"maxVelocity\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 730,
+        "y": 280,
+        "wires": [
+            [
+                "ae2335f4edef55e9"
+            ]
+        ]
+    },
+    {
+        "id": "7e82f36d763f49f3",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract actual rotary speed",
+        "func": "msg.payload = msg.payload[\"actRotarySpeed\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 760,
+        "y": 1060,
+        "wires": [
+            [
+                "4308d4a25069049d"
+            ]
+        ]
+    },
+    {
+        "id": "4308d4a25069049d",
+        "type": "ui_gauge",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "c7a2741f.257fe8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Actual rotary speed",
+        "label": "rpm",
+        "format": "{{value | number:1}}",
+        "min": "-2000",
+        "max": "2000",
+        "colors": [
+            "#ff4a4a",
+            "#00ff00",
+            "#ff4a4a"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1030,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "2bd43b02155c20b8",
+        "type": "comment",
+        "z": "8b6496d0edea5f9b",
+        "name": "Parameter handling for profile generator",
+        "info": "",
+        "x": 190,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f5a6538e7a09ed8f",
+        "type": "comment",
+        "z": "8b6496d0edea5f9b",
+        "name": "Commands to profile generator",
+        "info": "",
+        "x": 170,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "5fc5c56eccd8d4e6",
+        "type": "comment",
+        "z": "8b6496d0edea5f9b",
+        "name": "Actual data monitoring",
+        "info": "",
+        "x": 140,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "32a784c80ed54f5a",
+        "type": "ui_slider",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "label": "Set automatic cycle stop time",
+        "tooltip": "",
+        "group": "9f65dbac.c003d8",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "automaticCycleStopTime",
+        "min": "0",
+        "max": "5",
+        "step": "0.1",
+        "x": 1060,
+        "y": 400,
+        "wires": [
+            [
+                "29deefd661ac1703"
+            ]
+        ]
+    },
+    {
+        "id": "fdb84a79076c3331",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "extract production cycle stop time",
+        "func": "msg.payload = msg.payload[\"automaticCycleStopTime\"]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 400,
+        "wires": [
+            [
+                "32a784c80ed54f5a"
+            ]
+        ]
+    },
+    {
+        "id": "e3e03fde68e684a6",
+        "type": "ui_button",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "b68e50ed.da4e1",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Move absolute",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "MC_MoveAbsolute",
+        "payloadType": "str",
+        "topic": "command",
+        "x": 120,
+        "y": 720,
+        "wires": [
+            [
+                "7bd4d715e8e7d682"
+            ]
+        ]
+    },
+    {
+        "id": "035ef3fc184cd04f",
+        "type": "ui_button",
+        "z": "8b6496d0edea5f9b",
+        "name": "",
+        "group": "b68e50ed.da4e1",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Automatic mode",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "MC_LE_AutomaticMode",
+        "payloadType": "str",
+        "topic": "command",
+        "topicType": "str",
+        "x": 120,
+        "y": 780,
+        "wires": [
+            [
+                "7bd4d715e8e7d682"
+            ]
+        ]
+    },
+    {
+        "id": "41279217eb4b5095",
+        "type": "mqtt in",
+        "z": "8b6496d0edea5f9b",
+        "name": "pyprofgen.lenze.mosaiq/parameteronconnect",
+        "topic": "pyprofgen.lenze.mosaiq/parameteronconnect",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "ca0726f068a599e1",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "979125966a528148"
+            ]
+        ]
+    },
+    {
+        "id": "28263fbaafa8d12f",
+        "type": "trigger",
+        "z": "8b6496d0edea5f9b",
+        "name": "Generate UI connect trigger",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "0",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 420,
+        "y": 860,
+        "wires": [
+            [
+                "2da70de4c11b59c6"
+            ]
+        ]
+    },
+    {
+        "id": "2da70de4c11b59c6",
+        "type": "function",
+        "z": "8b6496d0edea5f9b",
+        "name": "UI_ON_CONNECT",
+        "func": "msg.topic = \"command\"\nmsg.payload = \"UI_ON_CONNECT\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "7bd4d715e8e7d682"
+            ]
+        ]
+    },
+    {
+        "id": "ddcd4bfee0669cdd",
+        "type": "comment",
+        "z": "8b6496d0edea5f9b",
+        "name": "Initialize parameters in UI",
+        "info": "To ensure the user starts modifing currently set parameters they have to be loaded once into the UI variables of Node-RED.\n\nBecause of the loose coupling of publisher, broker and subscriber (e.g. Node-RED) the start order of all these programs is arbitrary.\n\nUsing the trigger function linked to the subscription of the \"monitor\" allows to detect when the publisher is linked to the broker. Thus an command \"UI_ON_CONNECT\" will be received and parameters will be sent once at the start of the Node-RED flow",
+        "x": 150,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "b483ce4028e158db",
+        "type": "mqtt in",
+        "z": "ed3e68118df2bb87",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "ca0726f068a599e1",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 70,
+        "y": 100,
+        "wires": [
+            [
+                "e56e83fd1c14e90d"
+            ]
+        ]
+    },
+    {
+        "id": "e6c02824ec585c4b",
+        "type": "ui_table",
+        "z": "ed3e68118df2bb87",
+        "group": "2a014015.cbe44",
+        "name": "",
+        "order": 0,
+        "width": "15",
+        "height": "11",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 570,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e56e83fd1c14e90d",
+        "type": "function",
+        "z": "ed3e68118df2bb87",
+        "name": "convert to JSON for table",
+        "func": "// save already received monitoring data to avoid \"jumping\" rows as metrics won't arrive all at once\n// gMonitoringDataImage is a dict of monitoring data items. Referencing is done by the key of the data\n// each data item is an object containing \"key, value, topic\" where key is unique\n// in case a topic is plain text (no JSON string) the topic is also the key\nvar gMonitoringDataImage = context.get('gMonitoringDataImage')||{};\n\n//interpreate data of received topic and save it in the global data image\n// a topic can either have a plain string value or a JSON string\n\n//parse JSON returns either way -> so check once parsing is done\nvar jsonObject = {}\njsonObject = JSON.parse(msg.payload);\n\n//check if it is an object -> value of topic was a JSON string\nif (typeof jsonObject === \"object\" && jsonObject !== null) {\n    //transfer received monitoring item data to gMonitoringDataImage\n    for (var key in jsonObject) {\n        //extract data to create monitoring item and update data image\n        gMonitoringDataImage[key] = {}  //create item or reset item data\n        gMonitoringDataImage[key].key = key\n        gMonitoringDataImage[key].value = jsonObject[key]\n        gMonitoringDataImage[key].topic = msg.topic\n    }\n}\n//if no object, then it was a plain string\nelse if (jsonObject !== null) {\n    //extract data to create monitoring item and update data image\n    key = msg.topic\n    gMonitoringDataImage[key] = {}  //create item or reset item data\n    gMonitoringDataImage[key].key = msg.topic\n    gMonitoringDataImage[key].value = msg.payload\n    gMonitoringDataImage[key].topic = msg.topic\n}\n//no valid information found in the mqtt value\nelse {\n    return;\n}\n\n\n//save monitoring data\ncontext.set('gMonitoringDataImage',gMonitoringDataImage);\n\n//generate table view\nvar itemRowData = {}\n\nvar tableRows = []\n\nfor (var dataItem in gMonitoringDataImage) {\n    //reset array\n    itemRowData = {}\n    \n    itemRowData[\"Key or variable\"] = gMonitoringDataImage[dataItem].key\n    itemRowData[\"Value\"] = gMonitoringDataImage[dataItem].value\n    itemRowData[\"MQTT topic\"] = gMonitoringDataImage[dataItem].topic\n\n    tableRows.push(itemRowData)\n}\n\n\nmsg.payload = tableRows\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "e6c02824ec585c4b"
+            ]
+        ]
+    }
+]
