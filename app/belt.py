@@ -16,10 +16,10 @@ MQTT_BROKER_KEEPALIVE = int(initializeENV("MQTT_BROKER_KEEPALIVE", 60))
 
 #MQTT: the topic is formed of the app name: e.g. \Belt\command + JSON-string with all variable/values pairs
 #OPC UA: the node name is formed of the app name: e.g. \Belt\command + .Variable name
-TOPIC_COMMAND = "pyprofgen.lenze.mosaiq/command"
-TOPIC_PARAMETER = "pyprofgen.lenze.mosaiq/parameter"
-TOPIC_MONITOR = "pyprofgen.lenze.mosaiq/monitor"
-TOPIC_PARAMETER_ON_CONNECT= "pyprofgen.lenze.mosaiq/parameteronconnect"
+TOPIC_COMMAND = "pyprofgen.lenz2.nupano/command"
+TOPIC_PARAMETER = "pyprofgen.lenz2.nupano/parameter"
+TOPIC_MONITOR = "pyprofgen.lenz2.nupano/monitor"
+TOPIC_PARAMETER_ON_CONNECT= "pyprofgen.lenz2.nupano/parameteronconnect"
 
 COMMAND_ID_MOVE_VELOCITY = "MC_MoveVelocity"
 COMMAND_ID_MOVE_RELATIVE = "MC_MoveRelative"
