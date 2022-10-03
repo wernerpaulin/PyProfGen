@@ -2,7 +2,7 @@
 version: "3.4"
 services:
   pyprofgen:
-    image: pyprofgen:1.1.0
+    image: pyprofgen:2.0.0
     container_name: pyprofgen.lenze.nupano
     environment:
       - MQTT_BROKER_IP=eclipse-mosquitto.lenze.nupano
