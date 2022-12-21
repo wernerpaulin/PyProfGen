@@ -79,7 +79,7 @@ class RTapp:
             print("MQTT: Error connecting to broker: {0}".format(e))
             print("MQTT: shutting down in 10s, trying again at next start")
             time.sleep(10)               #sleep 10s to allow Docker restart policy
-            raise SystemExit
+            raise SystemExit(1)         #end with failure to force a restart
 
     def addSubscription(self, topic, destinationDataObj):
         #MQTT
